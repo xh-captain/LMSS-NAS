@@ -40,16 +40,6 @@ def load_data(image_file, label_file,windowsize,dataset):
     imag1=np.zeros((shape[0]+windowsize,shape[1]+windowsize,shape[2]), dtype=np.float32)
     half=windowsize//2
     imag1[half:half+shape[0] ,half:half+shape[1] ,:]=image  #内部填充
-
-    # imag1[0:half,half:half+shape[1] ,:]=image[0:half,:,:] #左右填充
-    # imag1[half+shape[0]+1:shape[0]+windowsize ,half:half+shape[1] ,:]=image[shape[0]-half:shape[0],:,:]  
-    # imag1[half:half+shape[0],0:half,:]=image[:,0:half,:] #下上填充
-    # imag1[half:half+shape[0] ,half+shape[1]+1:shape[1]+windowsize ,:]=image[:,shape[1]-half:shape[1],:] 
-    # shape1 = np.shape(imag1)   
-    # imag1[0:half,0:half,:]=image[0:half,0:half,:] #四个角填充
-    # imag1[0:half,shape1[1]-half:shape1[1],:]=image[0:half,shape[1]-half:shape[1],:]
-    # imag1[shape1[0]-half:shape1[0],0:half,:]=image[shape[0]-half:shape[0],0:half,:]
-    # imag1[shape1[0]-half:shape1[0],shape1[1]-half:shape1[1],:]=image[shape[0]-half:shape[0],shape[1]-half:shape[1],:]  
    
     shape1 = np.shape(label)    
     label1=np.zeros((shape1[0]+windowsize,shape1[1]+windowsize),dtype=np.uint8)
